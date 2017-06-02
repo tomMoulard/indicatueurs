@@ -24,7 +24,8 @@ from gi.repository import Gtk, Gdk, GLib, GObject
 from gi.repository import AppIndicator3 as appindicator
 
 APPINDICATOR_ID = "indic-thermal-cpu"
-APPINDICATOR_ICON = os.path.dirname(os.path.realpath(__file__)) + "/indic-thermal-cpu.svg"
+APPINDICATOR_ICON = os.path.dirname(os.path.realpath(__file__))\
+                        + "/indic-thermal-cpu.svg"
 class programa:
 
     def __init__(self):
@@ -47,7 +48,8 @@ class programa:
 
         # GTK menu
         self.menu      = Gtk.Menu()
-        self.item_time = Gtk.MenuItem("Last update: {}".format(strftime("%H:%M:%S", gmtime())))
+        self.item_time = Gtk.MenuItem("Last update: {}".\
+                format(strftime("%H:%M:%S", gmtime())))
         self.item_exit = Gtk.MenuItem("Exit")
         self.item_exit.connect("activate", self.quit) 
         
