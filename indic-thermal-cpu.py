@@ -3,8 +3,10 @@
 Created on Wen May 10 16:00:00 2017
 
 @author: tm
+For python2.7
 This is an indicator for Ubuntu to display core temperature
 Uses the function sensors
+To run simply run the command "python ./indic-thermal-cpu.py"
 """
 
 
