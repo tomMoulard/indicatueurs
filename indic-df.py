@@ -40,10 +40,9 @@ class programa:
 
     # Menu structure
     def menu_structure(self):
-        refresh = 360  # Refresh interval in seconds
+        refresh = 60  # Refresh interval in seconds
 
         #Get Data
-        #Can use inxi -Fx
         d = subprocess.check_output("df -h", shell=True)
 
         # GTK menu
