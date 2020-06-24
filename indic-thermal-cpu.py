@@ -36,7 +36,7 @@ class programa:
         self.ind = appindicator.Indicator.new(APPINDICATOR_ID,\
             APPINDICATOR_ICON,\
             appindicator.IndicatorCategory.SYSTEM_SERVICES)
-        self.ind.set_status(appindicator.IndicatorStatus.ACTIVE) # 
+        self.ind.set_status(appindicator.IndicatorStatus.ACTIVE) #
         self.menu_structure()
 
     # Menu structure
@@ -53,13 +53,13 @@ class programa:
         self.item_time = Gtk.MenuItem("Last update: {}".\
                 format(strftime("%H:%M:%S", gmtime())))
         self.item_exit = Gtk.MenuItem("Exit")
-        self.item_exit.connect("activate", self.quit) 
-        
+        self.item_exit.connect("activate", self.quit)
+
         # Append menu
         self.menu.append(self.item_time)
         self.menu.append(Gtk.SeparatorMenuItem())
-        
-        
+
+
         #self.item_core = Gtk.MenuItem(d)
         #self.menu.append(self.item_core)
         #coreMenu
@@ -69,14 +69,14 @@ class programa:
         self.menu.append(Gtk.SeparatorMenuItem())
         self.menu.append(self.item_exit)
         self.ind.set_menu(self.menu)
-        
+
         #show menu
         # self.item_time.show()
         # self.item_exit.show()
         self.menu.show_all()
 
         # Refresh indicator
-        GLib.timeout_add_seconds(refresh,self.menu_structure) 
+        GLib.timeout_add_seconds(refresh,self.menu_structure)
 
     def quit(self, widget):
         sys.exit(0)

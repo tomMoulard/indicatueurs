@@ -32,7 +32,7 @@ def clearData(d):
     This will betterize/reformatize the data
     The outout should be an array
 
-    For this particular usage : 
+    For this particular usage :
     Filesystem      Size  Used Avail Use% Mounted on
     udev            3,9G     0  3,9G   0% /dev
     tmpfs           787M   28M  759M   4% /run
@@ -69,7 +69,7 @@ class programa:
         self.ind = appindicator.Indicator.new(APPINDICATOR_ID,\
             APPINDICATOR_ICON,\
             appindicator.IndicatorCategory.SYSTEM_SERVICES)
-        self.ind.set_status(appindicator.IndicatorStatus.ACTIVE) # 
+        self.ind.set_status(appindicator.IndicatorStatus.ACTIVE) #
         self.menu_structure()
 
     # Menu structure
@@ -84,13 +84,13 @@ class programa:
         self.item_time = Gtk.MenuItem("Last update: {}".\
                 format(strftime("%H:%M:%S", gmtime())))
         self.item_exit = Gtk.MenuItem("Exit")
-        self.item_exit.connect("activate", self.quit) 
-        
+        self.item_exit.connect("activate", self.quit)
+
         # Append menu
         self.menu.append(self.item_time)
         self.menu.append(Gtk.SeparatorMenuItem())
-        
-        
+
+
         #self.item_core = Gtk.MenuItem(d)
         #self.menu.append(self.item_core)
         #coreMenu
@@ -102,12 +102,12 @@ class programa:
         self.menu.append(Gtk.SeparatorMenuItem())
         self.menu.append(self.item_exit)
         self.ind.set_menu(self.menu)
-        
+
         #show menu
         self.menu.show_all()
 
         # Refresh indicator
-        GLib.timeout_add_seconds(refresh,self.menu_structure) 
+        GLib.timeout_add_seconds(refresh,self.menu_structure)
 
     def quit(self, widget):
         sys.exit(0)
